@@ -11,15 +11,12 @@ db.enablePersistence()
 
 //Set up Database Real-time listener
 db.collection('files').onSnapshot((snapshot) => {
-    //console.log(snapshot.docChanges());
     snapshot.docChanges().forEach(change => {
-     //console.log(change, change.doc.data(), change.doc.id)
     if(change.type === 'added'){
-        //render data to webpage
-        renderFiles(change.doc.data(), change.doc.id)
+        renderFiles(change.doc.data(), change.doc.id); //render data to webpage
     }
     if(change.type === 'removed'){
-        //remove data from webpage
+        removeFiles(change.doc.id); //remove data from webpage
     }
     });
 })
@@ -36,10 +33,19 @@ form.addEventListener('submit', e => {
     };
     db.collection('files').add(newFile)
     .catch(err => console.log(err))
-
    
      title.value = '';
      category.value = '';
      link.value = '';
 });
+
+//Delete a File
+const cards = document.querySelector('.cards');
+cards.addEventListener('click', e => {
+    //console.log(e);
+    if(e.target.tagName === 'svg'){
+        const id = e.target.getAttribute('data-id');
+        db.collection('files').doc(id).delete();
+    }
+})
 
