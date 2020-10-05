@@ -6,7 +6,7 @@
     <script src="https://kit.fontawesome.com/3d62637f3e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Compact</title>
+    <title>Compact App</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
     id="search_input" 
     aria-label="Enter Search.." 
     aria-placeholder="Enter search.."
-    placeholder="Search collection.."
+    placeholder="Search by category or title.."
     >
     <div class="input-group-append">
     <span class="input-group-text search_icon">
@@ -38,14 +38,14 @@
 <!--Resources container-->
 <div class="container">
 <div id="resources" class="cards m-auto row">
-
+   
  
 </div>
 </div>
 
 <!--Add files modal button-->
 <div>
-<div class="text-center mt-5 mx-auto add-button" data-toggle="modal" data-target="#modalView">
+<div class="text-center mt-5 mx-auto add-button position-sticky" data-toggle="modal" data-target="#modalView">
 <svg width="3em" height="3em" id="add_btn" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -100,7 +100,7 @@
     -->
   </div>
   <div class="modal-footer">
-  <button type="submit" class="modal-btn" id="modal_btn">Add</button>
+  <button type="submit" class="modal-btn" id="modal_btn">Save</button>
   </div>
   </div>
 </form>
