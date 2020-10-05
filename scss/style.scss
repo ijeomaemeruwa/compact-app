@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-$primary-color: #f6f4e7;
+$primary-color: #fffaf0;
 $secondary-color: #fe6458;
 $text-color: #1a1a1a;
+$dark-mode: #1c1d20;
 
 * {
     box-sizing: border-box;
@@ -25,6 +26,27 @@ body {
     background: $text-color;
 }
 
+.add-button svg:hover, .delete-btn svg:hover {
+    color: $secondary-color;
+} 
+
 .modal-dialogue {
     background: $primary-color;
+}
+
+.modal-btn {
+    background: $secondary-color;
+    color: $primary-color;
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 100px;
+    letter-spacing: 1px;
+    
+}
+
+.modal-btn:hover {
+    color: $secondary-color;
+    background-color: transparent;
+    border: 2px solid $secondary-color;
 }
