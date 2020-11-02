@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-$primary-color: #fffaf0;
+$primary-color: #0e1116;
 $secondary-color: #fe6458;
 $text-color: #1a1a1a;
-$dark-mode: #1c1d20;
 
 * {
     box-sizing: border-box;
@@ -18,12 +17,16 @@ body {
 
 .card {
     border-radius: 10px;
-    background: #fefffe;
+    background: #f4f4f4;
 }
 
 .search_icon {
-    color: $primary-color;
-    background: $text-color;
+    color: #fefffe;
+    background: $primary-color;
+}
+
+.add-button {
+ color: #fefffe;
 }
 
 .add-button svg:hover, .delete-btn svg:hover {
@@ -31,7 +34,7 @@ body {
 } 
 
 .modal-dialogue {
-    background: $primary-color;
+    background: #fefffe;
 }
 
 .modal-btn {

@@ -42,7 +42,6 @@ form.addEventListener('submit', e => {
 //Delete a File
 const cards = document.querySelector('.cards');
 cards.addEventListener('click', e => {
-    //console.log(e);
     if(e.target.tagName === 'svg'){
         const id = e.target.getAttribute('data-id');
         db.collection('files').doc(id).delete();

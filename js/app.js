@@ -1,13 +1,14 @@
 const  compactCards = document.querySelector('#resources'), 
-       filterSearch = document.querySelector('#search_input'),
+       input = document.querySelector('#search_input'),
        title = document.querySelector('#title'),
       category = document.querySelector('#category'),
       link = document.querySelector('#link'),
       form = document.querySelector('form'),
       chooseFile = document.querySelector('#choose-file') 
 
+let searchResults = []
 
-   
+  
 // Render added files to the dom
 const renderFiles = (data, id) => {
    const files = `
@@ -30,25 +31,23 @@ const renderFiles = (data, id) => {
    </div>
    `
    compactCards.innerHTML += files;
-
-
-//Filter Search
-   filterSearch.addEventListener('keyup', e => {
-      const filter = e.target.value.toLowerCase().trim()
-      const search = `${data.category}`
-      //console.log(filter)
-      
-   })
-
 }
 
-//Sort Files by newest to oldest and vice versa
 
 //Remove files from webpage
 const removeFiles = (id) => {
-   const file = document.querySelector(`.cards[data-id=${id}]`) 
+   const file = document.querySelector(`.card[data-id=${id}]`) 
    file.remove();
 }
 
 
+//Filter Search
+input.addEventListener('keyup', e => {
+   const filter = e.target.value.toLowerCase()
+   const searchValue = category
+   let results = searchResults.filter(value => 
+      value.searchValue.toLowerCase().includes(filter)
+   )
+   renderFiles(results)
 
+})
